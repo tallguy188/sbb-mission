@@ -1,6 +1,7 @@
 package com.ll.sbbmission.presentation.controller;
 
 
+import com.ll.sbbmission.application.service.QuestionService;
 import com.ll.sbbmission.domain.entity.Question;
 import com.ll.sbbmission.domain.repository.QuestionRepository;
 import lombok.RequiredArgsConstructor;
@@ -16,12 +17,12 @@ import java.util.List;
 @Controller
 public class QuestionController {
 
-    private final QuestionRepository questionRepository;
+    private final QuestionService questionService;
 
     @GetMapping("/question/list")
     //@ResponseBody
     public String list(Model model) {
-        List<Question>questionList = this.questionRepository.findAll();
+        List<Question>questionList = this.questionService.getList();
         model.addAttribute("questionList",questionList);
         return "question_list";
     }
