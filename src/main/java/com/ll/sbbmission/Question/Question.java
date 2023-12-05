@@ -1,16 +1,18 @@
-package com.ll.sbbmission.domain.entity;
+package com.ll.sbbmission.Question;
 
 
+import com.ll.sbbmission.Answer.Answer;
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
+@Builder(toBuilder = true)
 @Setter
 @Entity  // 엔티티 어노테이션 적용을 해야 JPA가 인식함
+@AllArgsConstructor
 @NoArgsConstructor
 public class Question {
     @Id

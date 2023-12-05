@@ -1,6 +1,7 @@
-package com.ll.sbbmission.domain.entity;
+package com.ll.sbbmission.Answer;
 
 
+import com.ll.sbbmission.Question.Question;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

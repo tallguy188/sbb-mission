@@ -1,17 +1,14 @@
 package com.ll.sbbmission;
 
-import com.ll.sbbmission.domain.entity.Answer;
-import com.ll.sbbmission.domain.entity.Question;
-import com.ll.sbbmission.domain.repository.AnswerRepository;
-import com.ll.sbbmission.domain.repository.QuestionRepository;
+import com.ll.sbbmission.Answer.Answer;
+import com.ll.sbbmission.Question.Question;
+import com.ll.sbbmission.Answer.AnswerRepository;
+import com.ll.sbbmission.Question.QuestionRepository;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.swing.text.html.Option;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 

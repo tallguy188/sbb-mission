@@ -1,4 +1,4 @@
-package com.ll.sbbmission.presentation.controller;
+package com.ll.sbbmission;
 
 
 import org.springframework.stereotype.Controller;
