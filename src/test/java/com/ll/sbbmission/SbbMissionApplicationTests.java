@@ -4,6 +4,7 @@ import com.ll.sbbmission.Answer.Answer;
 import com.ll.sbbmission.Question.Question;
 import com.ll.sbbmission.Answer.AnswerRepository;
 import com.ll.sbbmission.Question.QuestionRepository;
+import com.ll.sbbmission.Question.QuestionService;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,17 +26,15 @@ class SbbMissionApplicationTests {
     @Autowired
     private AnswerRepository answerRepository;
 
+    @Autowired
+    private QuestionService questionService;
 
-    @Transactional
     @Test
-    void testJpa() {
-        Optional<Question> oq = this.questionRepository.findById(8);
-        assertTrue(oq.isPresent());
-        Question q = oq.get();
-
-        List<Answer> answerList = q.getAnswerList();
-
-        assertEquals(1, answerList.size());
-        assertEquals("네 자동으로 생성됩니다.", answerList.get(0).getContent());
+    void testJpa() {  // 대량테스트 데이터 생성
+        for(int i=1; i<=300; i++) {
+            String subject = String.format("데스트 데이터입니다:[%03d]",i);
+            String content = "내용 무";
+            this.questionService.create(subject,content);
+        }
     }
 }
